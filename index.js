@@ -3,7 +3,7 @@ fetch("https://striveschool-api.herokuapp.com/books")
     if (response.ok) {
       return response.json();
     } else {
-      throw new Error("c'è un errore");
+      throw new Error("C'è un errore");
     }
   })
   .then((books) => {
@@ -23,7 +23,10 @@ fetch("https://striveschool-api.herokuapp.com/books")
       <div class="card-body d-flex flex-column justify-content-between">
       <h6 class="card-title">${book.title}</h6>
       <p class="card-text">${book.price}</p>
-      <button type="button" id="delete-button${index}" class="btn btn-danger">elimina</button>
+      <div class="d-flex justify-content-evenly  ">
+      <button type="button" id="delete-button${index}" class="btn btn-danger"><i class="bi bi-trash"></i></button>
+      <button type="button" id="save-button${index}" class="btn btn-success"><i class="bi bi-cart-plus"></i></button>
+      </div>
       </div>
       </div>`;
       const deleteFilm = document.getElementById(`delete-button${index}`);
